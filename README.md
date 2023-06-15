@@ -1,2 +1,2 @@
 # Lavajato
-Projeto de aplicação web para gerenciamento de Lavajato usando o framework Django
+Projeto de aplicação web para gerenciamento de Lavajato usando o framework Django. Não finalizado.
