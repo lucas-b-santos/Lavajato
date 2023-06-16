@@ -21,10 +21,11 @@ def clientes(request):
         # os outros dados já preenchidos
 
         if cliente.exists():
-            return HttpResponse("Cliente já existe!!")
+            return render(request, 'clientes.html', {'nome':nome, 'sobrenome':sobrenome, 'email':email})
         
         if not re.fullmatch(re.compile(r'([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+'), email):
-            return HttpResponse("Email inválido!!")
+            return render(request, 'clientes.html', {'nome':nome, 'sobrenome':sobrenome, 'cpf':cpf})
+
 
         cliente = Cliente(
             nome = nome,
@@ -44,4 +45,4 @@ def clientes(request):
             )
             car.save()
 
-        return HttpResponse("Teste")
+    return render(request, 'clientes.html')
