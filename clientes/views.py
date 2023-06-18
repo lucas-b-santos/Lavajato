@@ -17,9 +17,6 @@ def clientes(request):
 
         cliente = Cliente.objects.filter(cpf=cpf)
 
-        #TODO: Validar os dados de entrada; caso dado inválido, retornar à página com
-        # os outros dados já preenchidos
-
         if cliente.exists():
             return render(request, 'clientes.html', {'nome':nome, 'sobrenome':sobrenome, 'email':email})
         
