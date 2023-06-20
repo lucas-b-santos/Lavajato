@@ -42,4 +42,4 @@ def clientes(request):
             )
             car.save()
 
-    return render(request, 'clientes.html')
+    return HttpResponse("teste")
